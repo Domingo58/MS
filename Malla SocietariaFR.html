@@ -1,0 +1,1146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Malla Societaria</title>
+	<style type="text/css">
+	body {
+		background-image: url("/mallaSocietariaNuevaParrilla/img/fondo_header.jpg");
+		background-repeat: repeat-x;
+		margin: 0px;
+	}
+	</style>
+	<link rel="stylesheet" href="Malla%20SocietariaFR_files/style.css">
+	<link rel="stylesheet" href="Malla%20SocietariaFR_files/styles.css">
+	<link rel="stylesheet" type="text/css" href="Malla%20SocietariaFR_files/importBootstrap.css">
+	<link rel="stylesheet" type="text/css" href="Malla%20SocietariaFR_files/importStyle.css">
+	<link rel="stylesheet" type="text/css" href="Malla%20SocietariaFR_files/importFontawesome.css">
+	<script src="Malla%20SocietariaFR_files/jquery_003.js"></script>
+	<script src="Malla%20SocietariaFR_files/bootstrap.js"></script>
+</head>
+<body id="body_global" class="">
+	<div class="content-all" style="min-height: calc(-179px + 100vh);">
+		<header class="bootstrap-iso style-iso fontawesome-iso">
+			
+
+
+<meta charset="utf-8">
+
+
+	
+		<header class="masthead">
+			<!-- Navigation ESTO ES MINIO -->
+			<!-- MINIO de https://dminio.equifax.cl/minio/cl.equifax.portal.template/ -->
+			<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+				<div class="container">
+					<a class="navbar-brand js-scroll-trigger" href="https://sec.equifax.cl/clients/"><img src="data:image/png;base64, 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" alt="EQUIFAX Portal" id="efxhome-logo"> </a>
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+						Menu <i class="fas fa-bars"></i>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarResponsive">
+						<ul class="navbar-nav ml-auto">
+							<li class="nav-item"><a class="nav-link" target="_blank" href="https://sec.equifax.cl/formulario-web-nueva-parrilla/solicitud/fase1"> <i class="fas fa-headphones"></i> Contáctanos
+							</a></li>
+							<li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#help"> <i class="fas fa-info-circle"></i> Ayuda
+							</a></li>
+							<li class="nav-item">
+								<button type="button" class="nav-link" data-toggle="dropdown">
+									<i class="fas fa-user-circle"></i> <label class="labelHeader">¡Bienvenido/a, Maria Garrido!</label> <i class="fas fa-caret-down pl-10"></i>
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="https://sec.equifax.cl/clients/user/passchange">Cambio de clave</a> <a class="dropdown-item" href="https://sec.equifax.cl/clients/user">Datos de usuario</a> <a class="dropdown-item" href="https://sec.equifax.cl/clients/logout">Cerrar sesión</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- END Navigation -->
+		</header>
+		<!-- Modal -->
+		<div class="modal fade" id="help" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">
+							Ayuda Equifax
+							<button type="button" class="close" data-dismiss="modal">×</button>
+						</h4>
+					</div>
+					<div class="modal-body text-center">
+						<div class="row">
+							<div class="col-sm-6 col-12 brd-gris" style="padding-left: 7%; padding-right: 7%;">
+								<div class="text-center">
+									<span class="red2 mt-30 mb-10" style="font-weight: bold;"> <i class="fas fa-question-circle red2 mt-20 mb-10" style="font-size: 75px;"></i>
+									</span>
+								</div>
+								<div class="row">
+									<div class="col-sm-12 col-12 pt-10">
+										<strong>¿Tienes dudas con respecto al Nuevo Portal Equifax?</strong>
+										<p>
+											<br> <small>Puedes revisar nuestras Preguntas Frecuentes haciendo click <a href="https://sec.equifax.cl/clients/FAQ">aquí</a>. Si aún tienes dudas, contáctate con nuestro Servicio al Cliente.
+											</small>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-12 text-sm-left" style="padding-left: 7%; padding-right: 7%;">
+								<div class="col-sm-12 col-12">
+									<div class="row">
+										<div class="col-sm-3 col-3">
+											<i class="fas fa-phone-square red2 mt-20 mb-10" style="font-size: 75px;"></i>
+										</div>
+										<div class="col-sm-9 col-9">
+											<div class="phone red2 mb-10" style="font-weight: 700; font-size: 17px; margin-top: 43px;">+56 6003 784 329</div>
+										</div>
+										<div class="row">
+											<div class="col-sm-12 col-12 pt-10 text-sm-center">
+												<strong>Horario de atención:</strong>
+												<!-- 														<h6>Horario de atención:</h4> -->
+												<br> <br> <br>
+												<h3>
+													Lunes a viernes: 09:00 a 20:00 hrs.
+													</h3>
+													<h3>
+														Sábado: 09:00 a 15:00 hrs.
+														</h3>
+														<br>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-12 text-sm-center">
+								<p>
+									<small>Si las líneas están ocupadas, diríjase a la opción <strong>Contáctenos</strong> en la página principal y le responderemos a la brevedad.
+									</small>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END Modal -->
+		<script type="text/javascript">
+			//Integracion HOME
+			$(document).on('click', '#homeref', function() {
+				let link = document.getElementById('efxhome-logo');
+				link.click();
+				// $("#efxhome-logo").trigger("click");
+			});
+		</script>
+	
+
+
+		</header>
+		<table style="background-image: url(/mallaSocietariaNuevaParrilla/img/fondo_header.jpg); background-repeat: repeat-x; margin: 0px;width: 100%;" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+				<!--<td width="18">&nbsp;</td>-->
+				<td width=""><img style="margin-left: 0px;" src="Malla%20SocietariaFR_files/logo_tree.jpg" width="203" height="114"></td>
+				<td style="vertical-align: top; padding-top: 07px;">
+					<table width="900px;">
+						<tbody><tr>
+							<td width="120">&nbsp;</td>
+							<td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; vertical-align: top; color: #FFF; padding-top: 4px; text-align: right;" width="130">
+								<strong>Rut Consultado</strong>
+							</td>
+							<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-align: top;" width="90">
+								<label for="rutMalla"></label>
+								<div>
+									<input type="text" maxlength="10" name="rutMalla" id="rutMalla" value="8228775-2"> 
+								</div>
+							</td>
+							<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-align: top; padding-top: 4px;" width="300">
+								<div>
+									<a onclick="javascript:System.ah = 1;generaBusqueda();" href="javascript:void(0);"> <img src="Malla%20SocietariaFR_files/btn_consultar.png" width="114" height="18" border="0">
+									</a> 
+								</div>
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+				<td style="vertical-align: top; padding-top: 07px;" width="30%">
+					<table style="margin-right: 20px; float: right;" width="" height="26" cellspacing="0" cellpadding="0" border="0">
+						<tbody><tr>
+							<td>
+								<!--
+	            	<a href="javascript:void(0);" onclick="openPdf();">
+	            		<img src="<c:url value="/public/img/excel_icono.png" />" width="32" height="25" border="0"/>
+	            	</a>
+	            	-->
+							</td>
+							<td><a href="javascript:void(0);" onclick="pdf();"> <img src="Malla%20SocietariaFR_files/pdf_icono.png" width="32" height="25" border="0">
+							</a></td>
+							<td><a onclick="openPdf();" href="javascript:void(0);"> <img src="Malla%20SocietariaFR_files/imprimir_icono.png" width="30" height="25" border="0">
+							</a></td>
+							<td><a href="javascript:void(0);" onclick="System.sendmail('');"> <img src="Malla%20SocietariaFR_files/corre_icono.png" width="33" height="25" border="0">
+							</a></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+		<table id="tabla_datos" cellspacing="0" cellpadding="0" border="0" align="center">
+			<tbody><tr>
+				<td>
+					<div class="datos" id="div_malla">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+	<div class="datos">
+		<div class="principal">
+			<div class="col-left icono">
+				 <img src="Malla%20SocietariaFR_files/conyuge_empresa.png" alt="" class="col-right left" width="60" height="60">
+			</div>
+			<div class="col-left info-principal ">
+				<img src="Malla%20SocietariaFR_files/header_rut_empresa.png" width="522" height="62" border="0">
+				<div class="dato-centro">
+					<span class="rut-principal"> RUT: 8.228.775-2</span> <span class="nombre-principal">FERNANDO ANTONIO RIVAS PIZARRO</span>
+						
+				</div>
+				<div class="iconos-principal">
+					<div class="ico-principal-margen">&nbsp;</div>
+					<div class="ico-principal">
+						<a href="javascript:void(0);" title="Vehiculos" onclick="new_window('directorioVehiculos8228775', 've')">
+							<img src="Malla%20SocietariaFR_files/icono_auto_on.jpg" width="24" height="26">
+						</a>
+						<form target="_blank" method="post" id="directorioVehiculos8228775" action="https://sec.equifax.cl/directorioDeVehiculos/informe" style="display: none;">
+							<input type="text" name="documentNumber" value="82287752">
+							<input type="text" name="busqueda" value="unica">
+							<input type="text" name="documentType" value="C">
+							<input type="text" name="tipoInforme" value="01">
+							<input type="text" name="origen" value="PLA">
+						</form>
+						
+					</div>
+					<div class="ico-principal">
+						<a title="Bienes Raices" href="javascript:void(0);" onclick="new_window('bienRaiz8228775', 'br')">
+							<img src="Malla%20SocietariaFR_files/icono_casa_on.jpg" width="24" height="26">
+						</a> 
+					</div>
+					<form target="_blank" method="post" id="bienRaiz8228775" action="https://sec.equifax.cl/registroBienesRaices/informe" style="display: none;">
+						<input type="text" name="rut" value="82287752">
+					</form>
+					<div class="ico-union">&nbsp;</div>
+					<div class="ico-principal">
+						
+							
+								<a title="Platinum360°" href="javascript:void(0);" onclick="new_window('platinum8228775', 'pl')">
+									<img src="Malla%20SocietariaFR_files/icono_hoja_on.jpg" width="24" height="26">
+								</a>
+								<form target="_blank" method="post" id="platinum8228775" action="https://sec.equifax.cl/platinum360NuevaParrilla/" style="display: none;">
+									<input type="text" name="rut" value="82287752">
+								</form>
+								
+							
+						
+						
+					</div>
+					<div class="ico-principal">
+						<a title="Alerta" href="javascript:void(0);" onclick="new_window('alerta8228775', 'al')">
+							<img src="Malla%20SocietariaFR_files/icono_alerta_on.jpg" width="24" height="26">
+						</a> 
+					</div>
+					<form target="_blank" method="post" id="alerta8228775" action="https://sec.equifax.cl/alertaComercial/suscribirrut" style="display: none;">
+						<input type="text" name="rut" value="8228775">
+						<input type="text" name="drut" value="2">
+						<input type="text" name="nombre" value="FERNANDO ANTONIO RIVAS PIZARRO">
+					</form>
+					<div class="ico-principal">&nbsp;</div>
+				</div>
+			</div>
+			<div class="col-left icono">
+				<img src="Malla%20SocietariaFR_files/sociedades_empresa.png" title="Sociedades corresponde a otras sociedades donde el RUT
+			consultado posee cierta participación." class="col-left right" width="89" height="60">
+			</div>
+		</div>
+		
+			
+			<div class="uniones">
+				<div class="col-left amarillo">
+					<img class="union-padre-a" src="Malla%20SocietariaFR_files/uniones_amarillo_a.png">
+				</div>
+				<div class="col-left rojo">
+					<img class="union-padre-b" src="Malla%20SocietariaFR_files/uniones_rojo_a.png">
+				</div>
+			</div>
+		
+		<div class="datos_principal" style="height: 420px;">
+			<div class="" style="display: table; width: 1100px; margin: 0px 81px;">
+				
+					
+					
+						<div class="col-left columna1">
+							
+								<div class="seccion">
+									<div class="col-left itemizq">
+										<div class="">
+											<img src="Malla%20SocietariaFR_files/footer_icono_conyuge.jpg"> 
+										</div>
+										<div class="cantidad">1</div>
+									</div>
+									<div class="col-left itemcentro">
+										<div class="datos-socios">
+											
+												<img src="Malla%20SocietariaFR_files/fondo_amarillo.png" width="265">
+												<div class="fondo-amarillo">
+													<span class="rut-seccion"> <a href="javascript:void(0);" onclick="System.ah = 1;generaSegundoNivel('0082522123','8228775-2', '1');">
+															8.252.212-3</a>
+													</span>
+													
+														<div class="nombre-seccion">ORELLANA VILLABLANCA GLORIA DEL CARMEN</div>
+														
+													
+												</div>
+											
+											
+										</div>
+										<div class="iconos-abajo">
+											<div class="ico-secciones-margen">&nbsp;</div>
+											<div class="ico-secciones">
+												<a title="Vehiculos" href="javascript:void(0);" onclick="new_window('directorioVehiculos008252212', 've')">
+													<img src="Malla%20SocietariaFR_files/icono_auto_on.jpg" width="24" height="26">
+												</a> 
+											</div>
+											<form target="_blank" method="post" id="directorioVehiculos008252212" action="https://sec.equifax.cl/directorioDeVehiculos/informe" style="display: none;">
+												<input type="text" name="documentNumber" value="0082522123">
+												<input type="text" name="busqueda" value="unica">
+												<input type="text" name="documentType" value="C">
+												<input type="text" name="tipoInforme" value="01">
+												<input type="text" name="origen" value="PLA">
+											</form>
+											<div class="ico-secciones">
+												<a title="Bienes Raices" href="javascript:void(0);" onclick="new_window('bienRaiz008252212', 'br')">
+													<img src="Malla%20SocietariaFR_files/icono_casa_on.jpg" width="24" height="26">
+												</a> 
+											</div>
+											<form target="_blank" method="post" id="bienRaiz008252212" action="https://sec.equifax.cl/registroBienesRaices/informe" style="display: none;">
+												<input type="text" name="rut" value="0082522123">
+											</form>
+											<div class="ico-secciones union">&nbsp;</div>
+											<div class="ico-secciones">
+												
+													
+														<a title="Platinum360°" href="javascript:void(0);" onclick="new_window('platinum008252212', 'pl')">
+															<img src="Malla%20SocietariaFR_files/icono_hoja_on.jpg" width="24" height="26">
+														</a>
+														<form target="_blank" method="post" id="platinum008252212" action="https://sec.equifax.cl/platinum360NuevaParrilla/" style="display: none;">
+															<input type="text" name="rut" value="0082522123">
+														</form>
+														
+													
+												
+												
+											</div>
+											<div class="ico-secciones">
+												<a title="Alerta" href="javascript:void(0);" onclick="new_window('alerta008252212', 'al')">
+													<img src="Malla%20SocietariaFR_files/icono_alerta_on.jpg" width="24" height="26">
+												</a> 
+												<form target="_blank" method="post" id="alerta008252212" action="https://sec.equifax.cl/alertaComercial/suscribirrut" style="display: none;">
+													<input type="text" name="rut" value="008252212">
+													<input type="text" name="drut" value="3">
+													<input type="text" name="nombre" value="ORELLANA VILLABLANCA GLORIA DEL CARMEN">
+												</form>
+											</div>
+											<div class="ico-secciones-margen">&nbsp;</div>
+										</div>
+									</div>
+									<div class="col-left itemder">
+										<div class="">
+											<img src="Malla%20SocietariaFR_files/footer_icono_empresa.jpg">
+										</div>
+										<div class="cantidad">1</div>
+									</div>
+								</div>
+							
+							
+						</div>
+						<div class="col-left columna2">
+							
+								<div class="seccion">
+									<div class="col-left itemizq">
+										<div class="">
+											 <img src="Malla%20SocietariaFR_files/icono_persona_p.jpg">
+										</div>
+										<div class="cantidad">3</div>
+									</div>
+									<div class="col-left itemcentro">
+										<div class="datos-socios">
+											<img src="Malla%20SocietariaFR_files/fondo_rojo.png" width="265">
+											<div class="fondo-rojo">
+												<span class="rut-seccion"> <a href="javascript:void(0);" onclick="System.ah = 1;generaSegundoNivel('0763407004','8228775-2', '3');">
+														76.340.700-4
+												</a>
+												</span>
+												
+													<div class="nombre-seccion" title="IMPRENTA Y COMERCIAL COLLIN SPA">IMPRENTA Y COMERCIAL COLLIN SPA</div>
+													
+												
+											</div>
+										</div>
+										<div class="iconos-abajo">
+											<div class="ico-secciones-margen">&nbsp;</div>
+											<div class="ico-secciones">
+												<a title="Vehiculos" href="javascript:void(0);" onclick="new_window('directorioVehiculos076340700', 've')">
+													<img src="Malla%20SocietariaFR_files/icono_auto_on.jpg" width="24" height="26">
+												</a> 
+											</div>
+											<form target="_blank" method="post" id="directorioVehiculos076340700" action="https://sec.equifax.cl/directorioDeVehiculos/informe" style="display: none;">
+												<input type="text" name="documentNumber" value="0763407004">
+												<input type="text" name="busqueda" value="unica">
+												<input type="text" name="documentType" value="C">
+												<input type="text" name="tipoInforme" value="01">
+												<input type="text" name="origen" value="PLA">
+											</form>
+											<div class="ico-secciones">
+												<a title="Bienes Raices" href="javascript:void(0);" onclick="new_window('bienRaiz076340700', 'br')">
+													<img src="Malla%20SocietariaFR_files/icono_casa_on.jpg" width="24" height="26">
+												</a> 
+											</div>
+											<form target="_blank" method="post" id="bienRaiz076340700" action="https://sec.equifax.cl/registroBienesRaices/informe" style="display: none;">
+												<input type="text" name="rut" value="0763407004">
+											</form>
+											<div class="ico-secciones union">&nbsp;</div>
+											<div class="ico-secciones">
+												
+												
+													
+														<a href="javascript:void(0);" title="Informe Empresarial" onclick="callEmpresarial(0763407004)">
+															<img src="Malla%20SocietariaFR_files/icono_hoja_on.jpg" width="24" height="26">
+														</a>
+														
+													
+												
+											</div>
+											<div class="ico-secciones">
+												<a title="Alerta" href="javascript:void(0);" onclick="new_window('alerta076340700', 'al')">
+													<img src="Malla%20SocietariaFR_files/icono_alerta_on.jpg" width="24" height="26">
+												</a> 
+												<form target="_blank" method="post" id="alerta076340700" action="https://sec.equifax.cl/alertaComercial/suscribirrut" style="display: none;">
+													<input type="text" name="rut" value="076340700">
+													<input type="text" name="drut" value="4">
+													<input type="text" name="nombre" value="IMPRENTA Y COMERCIAL COLLIN SPA">
+												</form>
+											</div>
+											<div class="ico-secciones-margen">&nbsp;</div>
+										</div>
+									</div>
+									<div class="col-left itemder">
+										<div class="">
+											<img src="Malla%20SocietariaFR_files/footer_icono_empresa.jpg">
+										</div>
+										<div class="cantidad">0</div>
+									</div>
+								</div>
+							
+							
+						</div>
+					
+				
+			</div>
+			<form id="consultEmpr" method="post" action="https://sec.equifax.cl/informe-empresarial/?lang=es" target="_blank">
+
+				<input name="rut" id="rutEmpr" type="hidden" value="">
+
+			</form>
+			
+		<div class="footer col-left">
+			<table width="100%" height="60" cellspacing="0" cellpadding="0" border="0">
+				<tbody><tr>
+					<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333; text-align: left;" width="50%">
+						<br>
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td class="margen-tablas">&nbsp;</td>
+								<td width="" height="39"><strong style="font-size: 13px;">Socios</strong>
+									corresponde a las Personas Naturales o Empresas que tienen
+									participación sobre el <span style="text-decoration: underline;">RUT consultado.</span> <br>
+									Para el óptimo funcionamiento de Malla Societaria, sólo se
+									mostrarán hasta 300 socios. Los resultados se ordenan de la
+									siguiente manera:<br> <strong style="font-size: 13px;">1ro</strong>
+									Personas Jurídicas ordenados por RUT de mayor a menor<br> <strong style="font-size: 13px;">2do</strong> Personas Naturales
+									ordenados por RUT de menor a mayor</td>
+								<td class="margen-tablas">&nbsp;</td>
+							</tr>
+						</tbody></table>
+					</td>
+					<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333; text-align: left;" width="50%">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td class="margen-tablas">&nbsp;</td>
+								<td width="" height="39"><strong style="font-size: 13px;">Sociedades</strong>
+									corresponde a otras sociedades donde el <span style="text-decoration: underline;">RUT consultado</span> posee
+									cierta participación.</td>
+								<td class="margen-tablas">&nbsp;</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+			<table width="100%" border="0">
+				<tbody><tr class="trhideclass1">
+					<td style="background-image: url(/mallaSocietariaNuevaParrilla/img/fondo_limpiar.jpg); background-repeat: repeat-x; vertical-align: top; border: none;" height="40">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td width="302">&nbsp;</td>
+								<td style="text-align: center;" width="306"><a href="javascript:void(0);" onclick="limpiar();"> <img src="Malla%20SocietariaFR_files/boton_nuevaconsulta.png" width="114" height="18" border="0">
+								</a></td>
+								<td width="292">&nbsp;</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr class="trhideclass2" style="display: none;">
+					<td style="background-image: url(/mallaSocietariaNuevaParrilla/img/fondo_limpiar.jpg); background-repeat: repeat-x; vertical-align: top; border: none;" height="40">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td width="302">&nbsp;</td>
+								<td style="text-align: center;" width="153"><a href="javascript:void(0);" onclick="volver();"> <img src="Malla%20SocietariaFR_files/boton_volver.png" width="114" height="18">
+								</a></td>
+								<td style="text-align: center;" width="153"><a href="javascript:void(0);" onclick="limpiar();"> <img src="Malla%20SocietariaFR_files/boton_nuevaconsulta.png" width="114" height="18">
+								</a></td>
+								<td width="292">&nbsp;</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+			<table width="100%" height="110" cellspacing="0" cellpadding="0" border="0">
+				<tbody><tr>
+					<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333; text-align: left;" width="45%">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td colspan="6" style="text-align: center; text-decoration: underline;" height="23">Nomenclatura</td>
+							</tr>
+							<tr>
+								<td width="111" height="45"><img src="Malla%20SocietariaFR_files/footer_icono_rojo.jpg" width="108" height="29"></td>
+								<td width="134">RUT Persona Jurídica</td>
+								<td width="38"><img src="Malla%20SocietariaFR_files/footer_icono_persona.jpg"></td>
+								<td width="74">Socios</td>
+								<td width="48"><img src="Malla%20SocietariaFR_files/footer_icono_conyuge.jpg"></td>
+								<td width="77">Cónyuge</td>
+							</tr>
+							<tr>
+								<td><img src="Malla%20SocietariaFR_files/footer_icono_amarillo.jpg" width="108" height="25"></td>
+								<td>RUT Persona Natural</td>
+								<td><img src="Malla%20SocietariaFR_files/footer_icono_empresa.jpg"></td>
+								<td>Sociedades</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody></table>
+					</td>
+					<td width="15%"></td>
+					<td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #333; text-align: left;" width="40%">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr>
+								<td colspan="4" style="text-decoration: underline;" height="23">Productos</td>
+							</tr>
+							<tr>
+								<td width="44" height="45"><img src="Malla%20SocietariaFR_files/footer_icono_auto.jpg"></td>
+								<td width="179">Directorio de Vehículos</td>
+								<td width="38"><img src="Malla%20SocietariaFR_files/footer_icono_papel.jpg"></td>
+								<td width="126">Informe Platinum 360°/<br> Informe
+									Empresarial
+								</td>
+							</tr>
+							<tr>
+								<td><img src="Malla%20SocietariaFR_files/footer_icono_casa.jpg"></td>
+								<td>Registro de Bienes Raíces</td>
+								<td><img src="Malla%20SocietariaFR_files/footer_icono_alerta.jpg"></td>
+								<td>Alerta Comerial</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+	
+		</div>
+	</div>
+
+</div>
+				</td>
+			</tr>
+		</tbody></table>
+		<input type="hidden" name="rutParent" id="rutParent">
+		<input type="hidden" name="rutSecond" id="rutSecond" value="">
+		<div style="display: none;">
+			<iframe id="iframeDownload"></iframe>
+		</div>
+		<!-- Bootstrapping-libraries -->
+		
+	<!-- JQUERY UI CSS -->
+	<link rel="stylesheet" type="text/css" href="Malla%20SocietariaFR_files/jquery-ui.css">
+
+	<!-- JQUERY LIB -->
+	<script type="text/javascript" src="Malla%20SocietariaFR_files/jquery.js"></script>
+
+	<!-- JQUERY UI LIB -->
+	<script type="text/javascript" src="Malla%20SocietariaFR_files/jquery-ui.js"></script>
+
+	<!-- JQUERT LOADMASK -->
+	<link rel="stylesheet" type="text/css" href="Malla%20SocietariaFR_files/jquery.css">
+	<script type="text/javascript" src="Malla%20SocietariaFR_files/jquery_002.js"></script>
+
+	<!-- JQUERY RUT -->
+	<script type="text/javascript" src="Malla%20SocietariaFR_files/jquery-rut.js"></script>
+
+	<!-- JQUERY NAMESPACES -->
+	<script type="text/javascript" src="Malla%20SocietariaFR_files/namespace.js"></script>
+
+	<script type="text/javascript" src="Malla%20SocietariaFR_files/Cookies.js"></script>
+
+		<!-- /Bootstrapping-libraries -->
+		<!-- JAVASCRIPT-APP -->
+		
+	<script type="text/javascript">
+		/*<![CDATA[*/
+		if (typeof String.prototype.trim !== 'function') {
+			String.prototype.trim = function() {
+				return this.replace(/^\s+|\s+$/g, '');
+			}
+		}
+		System.ah = 1;
+		System.openNewWindow = 1;//1 SI:0 NO
+
+		  
+		System.openNewWindow = 0;
+		  
+
+		// <c:if test="${rutSegundoNivel != null }">
+		// 	System.openNewWindow = 0;
+		// </c:if>	
+		function volver() {
+			generaBusqueda($("#parentRut").val());
+			$("#parentRut").val('');
+			$(".trhideclass2").hide();
+			$(".trhideclass1").show();
+		}
+
+		function tracker(producto) {
+			$.post("\/mallaSocietariaNuevaParrilla\/malla\/track", {
+				producto : producto
+			}, function(data) {
+
+			});
+		}
+
+		function limpiar() {
+			$("#div_malla").html('');
+			$('#rutMalla').val('');
+			$("#rutSecond").val('');
+			$(".trhideclass2").hide();
+			$(".trhideclass1").show();
+		}
+
+		function consultaDesdeSegundaMalla(rut) {
+			if (checkSessionActiva()) {
+				var url = "\/mallaSocietariaNuevaParrilla\/malla\/inicio";
+				url += "?rutSegundoNivel=" + rut;
+				var wihe = 'width=' + screen.availWidth + ',height=' + screen.availHeight;
+				window.open(url, "", "scrollbars=yes,resizable=yes,screenX=1,screenY=1,left=1,top=1," + wihe);
+			} else {
+				System
+						.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+			}
+		}
+
+		function new_window(id, tipo) {
+			$('#' + id).submit();
+
+			if (tipo == 've') {
+				tracker('Vehiculos')
+			} else if (tipo == 'br') {
+				tracker('Bienes Raices')
+			} else if (tipo == 'pl') {
+				tracker('Platinum');
+			} else if (tipo == 'al') {
+				tracker('Alerta');
+			} else if (tipo == 'iem') {
+				tracker('Informe Empresarial');
+			}
+		}
+
+		function generaSegundoNivel(rutSegundoNivel, rutParent, cantidadSocios) {
+			if (checkSessionActiva()) {
+				$('#body_global')
+						.mask(
+								"Cargando segundo nivel, por favor espere...");
+				$("#rutParent").val(rutParent);
+				$("#rutSecond").val(rutSegundoNivel);
+				
+				$.ajax({
+					type: "POST",
+				  	url: "\/mallaSocietariaNuevaParrilla\/malla\/segundoNivel",
+				  	data: { 
+				  		rutSegundoNivel : rutSegundoNivel,
+						rutMalla : rutParent,
+						cantidadSocios : cantidadSocios 
+					},
+					error: function(dataError) {
+						if(dataError.status == 428) {
+							window.location.href = "\/mallaSocietariaNuevaParrilla\/malla\/inicio";
+						}
+					},
+				  	success: function(data) {
+				  		$("#body_global").unmask();
+						if (data.trim() == 'norut') {
+							System
+									.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+						} else if (data.trim() == 'remoteexception') {
+							System
+									.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+						} else if (data.trim() == 'ejbproblem') {
+							System
+									.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+						} else if (data.trim() == 'sinsesion') {
+							System
+									.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+						} else if (data.trim() == 'nullpointer') {
+							System
+									.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+						} else if (data.trim() == 'wserror') {
+							System
+									.messagebox("No se encontraron relaciones para el RUT consultado.");
+						} else if (data.trim() == 'mallaexception') {
+							System
+									.messagebox("Ocurri\u00F3 un problema al obtener datos desde webservice");
+						} else if (data.trim() == 'cobroexception') {
+							System
+									.messagebox("No est\u00E1 definido el par\u00E1metro de Max. Ocurrencias, favor defina o asigne valor");
+						} else {
+							if (System.ah == 1) {
+								if (window.history
+										&& window.history.pushState) {
+									window.history.pushState({
+										rutMalla : rutParent,
+										accion : 'buscar2do',
+										rut2do : rutSegundoNivel
+									}, '',
+									"\/mallaSocietariaNuevaParrilla\/malla\/buscar");
+								}
+							}
+							$("#div_malla").html(data)
+							$(".trhideclass1").hide();
+							$(".trhideclass2").show();
+						}
+				  	}
+				});
+			} else {
+				System
+						.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+			}
+		}
+
+		function generaBusqueda(rut) {
+			var rutMalla = '';
+			if (rut == '' || rut == 'undefined' || rut == undefined) {
+				rutMalla = $('#rutMalla').val();
+			} else {
+				rutMalla = rut;
+			}
+
+			//VALIDACION DEL RUT
+			var rutSinFormato = (rutMalla.split('.').join('')).split('-').join(
+					'');
+			if (!jQuery.Rut.digitoCorrecto(rutSinFormato)) {
+				System
+						.messagebox("El RUT ingresado no es v\u00E1lido.");
+				$("#div_malla").html('');
+				return false;
+			}
+
+			if (rutMalla == '') {
+				System
+						.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+			} else {
+				if (checkSessionActiva()) {
+					$("#rutSecond").val('');
+					$('#body_global').mask("Generando malla, por favor espere...");
+					
+					$.ajax({
+						  type: "POST",
+						  url: "\/mallaSocietariaNuevaParrilla\/malla\/buscar",
+						  data: { rutMalla : rutMalla },
+						  success: function(data, textStatus, jqXHR) {
+							  $("#body_global").unmask();
+								if (data.trim() == 'norut') {
+									System.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+								} else if (data.trim() == 'remoteexception') {
+									System.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+								} else if (data.trim() == 'ejbproblem') {
+									System.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+								} else if (data.trim() == 'sinsesion') {
+									System.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+								} else if (data.trim() == 'wserror') {
+									System.messagebox("No se encontraron relaciones para el RUT consultado.");
+								} else if (data.trim() == 'connectrefused') {
+									System.messagebox("La conexi\u00F3n fue rechazada, vuelva a intentar.");
+								} else if (data.trim() == 'unknownhost') {
+									System
+											.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+								} else if (data.trim() == 'authenticationfailed') {
+									System
+											.messagebox("Usuario\/Clave no tiene permisos para realizar consultas.");
+								} else if (data.trim() == 'mallaexception') {
+									System
+											.messagebox("Ocurri\u00F3 un problema al obtener datos desde webservice");
+								} else if (data.trim() == 'cobroexception') {
+									System
+											.messagebox("No est\u00E1 definido el par\u00E1metro de Max. Ocurrencias, favor defina o asigne valor");
+								} else if (data.trim() == 'nullpointer') {
+									System
+											.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+								} else {
+									$("#div_malla").html(data)
+									if (System.ah == 1) {
+										if (window.history
+												&& window.history.pushState) {
+											window.history
+													.pushState(
+															{
+																rutMalla : rutMalla,
+																accion : 'buscar'
+															},
+															'',
+															"\/mallaSocietariaNuevaParrilla\/malla\/buscar");
+										}
+									}
+								}	  
+						  },
+						  error: function(dataError){
+							  if(dataError.status == 428) {
+								  window.location.href = "\/mallaSocietariaNuevaParrilla\/malla\/inicio";
+							  }
+						  }
+					});
+				} else {
+					System.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+				}
+			}
+		}
+
+		function pdf() {
+			if (checkSessionActiva()) {
+				var rutMalla = $('#rutMalla').val();
+				if (rutMalla == '') {
+					System
+							.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+				} else {
+					var rutSecond = $("#rutSecond").val();
+					var url = "\/mallaSocietariaNuevaParrilla\/export\/pdf";
+					url += "?rutConsultado=" + rutMalla + "&rutSecond="
+							+ rutSecond;
+					$('#iframeDownload').attr('src', url)
+				}
+			} else {
+				System
+						.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+			}
+
+		}
+
+		function openPdf() {
+			if (checkSessionActiva()) {
+				var rutMalla = $('#rutMalla').val();
+				if (rutMalla == '') {
+					System
+							.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+				} else {
+					var rutSecond = $("#rutSecond").val();
+					var url = "\/mallaSocietariaNuevaParrilla\/export\/pdf";
+					url += "?rutConsultado=" + rutMalla + '&o=t&rutSecond='
+							+ rutSecond;
+					window.open(url, '', "width=800, height=600");
+				}
+			} else {
+				System
+						.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+			}
+
+		}
+
+		function consultaMalla() {
+			//VALIDACION DEL RUT
+			var rutMalla = $("#rutMalla").val();
+
+			var rutSinFormato = (rutMalla.split('.').join('')).split('-').join(
+					'');
+			if (!jQuery.Rut.digitoCorrecto(rutSinFormato)) {
+				System
+						.messagebox("El RUT ingresado no es v\u00E1lido.");
+				return false;
+			}
+			if (rutMalla == '') {
+				System
+						.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+			} else {
+				consultaDesdeSegundaMalla(rutMalla);
+			}
+
+		}
+
+		$(function() {
+			$("#rutMalla")
+					.keypress(
+							function(event) {
+								if (event.which == 13) {
+									//generaBusqueda('');
+									var rutMalla = $(this).val();
+
+									//VALIDACION DEL RUT
+									var rutSinFormato = (rutMalla.split('.')
+											.join('')).split('-').join('');
+									if (!jQuery.Rut
+											.digitoCorrecto(rutSinFormato)) {
+										System
+												.messagebox("El RUT ingresado no es v\u00E1lido.");
+										return false;
+									}
+									if (rutMalla == '') {
+										System
+												.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+									} else {
+										if (System.openNewWindow == 1) {
+											consultaDesdeSegundaMalla(rutMalla);
+										} else {
+											generaBusqueda(rutMalla);
+										}
+
+									}
+								}
+							});
+			$(".trhideclass2").hide();
+			jQuery.fn.ForceNumericOnly = function() {
+				return this
+						.each(function() {
+							$(this)
+									.keypress(
+											function(e) {
+												var key = e.charCode
+														|| e.keyCode || 0;
+												return (key == 8
+														|| key == 9
+														|| key == 13
+														|| key == 75
+														|| key == 107
+														|| key == 45
+														|| (key >= 48 && key <= 57)
+														|| (key >= 37 && key <= 40) || (key >= 112 && key <= 123));
+											});
+						});
+			};
+			$("#rutMalla").ForceNumericOnly();
+		});
+		window.onpopstate = function(event) {
+			if (window.history && window.history.pushState) {
+				var json = JSON.parse(JSON.stringify(event.state));
+				System.ah = 0;
+				if (json == null) {
+
+				} else if (json.accion == 'inicial') {
+					limpiar();
+				} else if (json.accion == 'buscar') {
+					generaBusqueda(json.rutMalla);
+				} else if (json.accion == 'buscar2do') {
+					generaSegundoNivel(json.rut2do, json.rutMalla, '');
+				}
+			}
+		};
+		if (window.history && window.history.pushState) {
+			history.pushState({
+				"accion" : "inicial"
+			}, '', "\/mallaSocietariaNuevaParrilla\/malla\/inicio");
+		}
+		/*]]>*/
+	</script>
+
+		<!-- /JAVASCRIPT-APP -->
+		<!-- Messages -->
+		
+		<script type="text/javascript">
+			/*<![CDATA[*/
+			System.messagebox = function(message) {
+				$('#dialog-message-text').html(message);
+				$("#dialog-message").dialog({
+					modal : true,
+					resizable : false,
+					draggable : false,
+					buttons : {
+						Aceptar : function() {
+							$(this).dialog("close");
+						}
+					}
+				});
+			};
+
+			System.pdf = function(rut) {
+				$('#iframeDownload').attr('src', 'export/pdf?rut=' + rut);
+			};
+
+			System.sendmail = function(rut) {
+				if (checkSessionActiva()) {
+					$("#destinos-correos").val('');
+					$("#dialog-correos")
+							.dialog(
+									{
+										modal : true,
+										draggable : false,
+										resizable : false,
+										width : 420,
+										buttons : {
+											Enviar : function() {
+												$("#dialog-correos")
+														.mask(
+																"Enviando correo, por favor espere...");
+												var destinatarios = $(
+														"#destinos-correos")
+														.val();
+												if (destinatarios == ''
+														|| destinatarios == 'undefined'
+														|| destinatarios == undefined) {
+													System
+															.messagebox("Debe ingresar un destinatario.");
+													$("#dialog-correos")
+															.unmask();
+													return;
+												}
+												var rutMalla = '';
+												if (rut == ''
+														|| rut == 'undefined'
+														|| rut == undefined) {
+													rutMalla = $('#rutMalla')
+															.val();
+												} else {
+													rutMalla = rut;
+												}
+												if (rutMalla == '') {
+													System
+															.messagebox("No se pueden consultar RUT vac\u00EDos, vuelva a consultar.");
+													$("#dialog-correos")
+															.unmask();
+												} else {
+													var rutSecond = $(
+															"#rutSecond").val();
+													$
+															.post(
+																	"\/mallaSocietariaNuevaParrilla\/export\/sendmail",
+																	{
+																		rutConsultado : rutMalla,
+																		destinatarios : destinatarios,
+																		rutSecond : rutSecond
+																	},
+																	function(
+																			data) {
+																		$(
+																				"#dialog-correos")
+																				.unmask();
+																		$(
+																				"#dialog-correos")
+																				.dialog(
+																						"close");
+																		if (data
+																				.trim() == 'sinsesion') {
+																			System
+																					.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+																		} else if (data
+																				.trim() == 'senderror') {
+																			System
+																					.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+																		} else if (data
+																				.trim() == 'ejbproblem') {
+																			System
+																					.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+																		} else if (data
+																				.trim() == 'wsjaspererror') {
+																			System
+																					.messagebox("Problema al generar el archivo PDF.");
+																		} else if (data
+																				.trim() == 'errorgeneral') {
+																			System
+																					.messagebox("Problemas tecnicos, por favor intente mas tarde.");
+																		} else if (data
+																				.trim() == 'emailnovalido') {
+																			System
+																					.messagebox("Correo(s) inv\u00E1lido(s), verifique y vuelva a intentar.");
+																		} else if (data
+																				.trim() == 'enviook') {
+																			System
+																					.messagebox("El informe de Malla Societaria fue enviado correctamente.");
+																		}
+																	});
+												}
+
+											}
+										}
+									});
+				} else {
+					System
+							.messagebox("Su sesi\u00F3n ha finalizado, vuelva a ingresar.");
+				}
+
+			};
+			/*]]>*/
+		</script>
+
+		<div id="dialog-message" style="display: none;" title="Información">
+			<p id="dialog-message-text" style="font-family: serif; font: normal;"></p>
+		</div>
+
+		<div id="dialog-correos" title="Envío correos" style="display: none;">
+			Correos: <input style="width: 300px;" type="text" id="destinos-correos" name="destinos"> <br><br>
+			<p>Si desea enviar más de un correo, separe con comas.</p>
+		</div>
+
+		<div id="dialog-confirm" style="display: none;" title="Información">
+			<p>
+				<span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+				Nueva consulta a Malla Societaria
+			</p>
+		</div>
+	
+		<!-- /Messages -->
+	</div>
+	<!-- Busqueda-Script -->
+	<script type="text/javascript">
+		System.ah = 1;
+		generaBusqueda();
+	</script>
+	<!-- /Busqueda-Script -->
+	<section id="sectionFooter" class="bootstrap-iso style-iso fontawesome-iso">
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<img class="pb-20" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAPCAYAAABJGff8AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MDM3Q0NDRjkzNzcwMTFFNEJGRTZDODRDOUREMTc0NUYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MDM3Q0NDRjgzNzcwMTFFNEJGRTZDODRDOUREMTc0NUYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkUwQjJCRkVDNEY0OTExRTM4RjYxREQ4RDA2NTJFNUI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkUwQjJCRkVENEY0OTExRTM4RjYxREQ4RDA2NTJFNUI2Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+CygluQAAAadJREFUeNrUVsttg0AQxYgCKGHTAVy44nRgKojdgV2BTQV2KsCpILiCOEdOIRVkOwgdJEM0WGg1n13fstKTrYUZ3pt5O7Doui76x+sI2AJ6wC5xLq4BTwHJXjDRMSBmAKTCtQ3+apx2gAyffwUsXTHluBlA7BnvD4k5IQkuxiLRSUhD3LNBEQNiBagXjs2+ACaA2ANgjw/1XRUS+RA6lKPghujcI8ZHGD8WxRZF0c/FjBe+icQ14CCQowpgUai0toI9LZOzmgn5WyDi9j+e7XNtvwqEUqaTvafduNyGyJdreWPnvFDrDfDjoFEKkGHcHAfG+4MiukVrafdFiUPAd30qMYao7oWxU63YrfIllSg2swjOemVAAXrGptKrwODZOoWI4ewyVu0sxC8Z0rnHs8euvnpMzz1azWoJY8UuvUImdGC4Z8oQo5fqXhPSGc4uKwRFmKvou6eQlBgGBjtBOWCtuOQmJhNazHWsvKMz0hv9PDtDhvkOa6WpFjOTx+cwZ8zAGO4UMtmsFt5pjU9n6kAxFkfthdiXJlNNFKV19qYOpaGf0L8CDAB8d29JV3PT1AAAAABJRU5ErkJggg==">
+						<p>Copyright 2019 Equifax Inc. Todos los derechos reservados.</p>
+						<p>Equifax y las marcas de Equifax utilizadas en este
+							documento son marcas comerciales de Equifax inc. Otros nombres de
+							Productos y compañías mencionados aquí son propiedad de sus
+							respectivos dueños.</p>
+					</div>
+					<div class="col-lg-3 hidden-xs"></div>
+					<div class="col-lg-3 text-right pt-30">
+						<p>
+							Servicio al Cliente <a href="tel:6003784329">600-3784329</a><br>
+							<a href="mailto:equifax@equifax.cl">equifax@equifax.cl</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	
+	</section>
+	<script src="Malla%20SocietariaFR_files/responsive.js"></script>
+
+
+</body></html>
